@@ -1,0 +1,25 @@
+header {
+  width: 100%;
+  height: 100px;
+  background-color: blue; }
+
+aside {
+  width: 20%;
+  height: 500px;
+  background-color: green;
+  float: left; }
+
+.menu {
+  text-decoration: none;
+  list-style: none; }
+
+main {
+  width: 80%;
+  height: 500px;
+  background-color: yellow;
+  float: right; }
+
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: grey; }

@@ -1,0 +1,32 @@
+$bcHeader: blue;
+$bcAside: green;
+$bcMain: yellow;
+$bcFooter: grey;
+
+header {
+  width: 100%;
+  height: 100px;
+  background-color: $bcHeader;
+}
+aside {
+  width: 20%;
+  height: 500px;
+  background-color: $bcAside;
+  float: left;
+}
+.menu {
+  text-decoration: none;
+  list-style: none;
+}
+main {
+  width: 80%;
+  height: 500px;
+  background-color: $bcMain;
+  float: right;
+}
+footer {
+  clear: both;
+  width: 100%;
+  height: 50px;
+  background-color: $bcFooter;
+}
