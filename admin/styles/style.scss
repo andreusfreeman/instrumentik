@@ -68,6 +68,15 @@ main {
   margin-left: 250px;;
   background-color: $bcMain;
   // float: right;
+  overflow: hidden;
+}
+.things {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 1px 1px 10px blue;
 }
 footer {
   clear: both;
