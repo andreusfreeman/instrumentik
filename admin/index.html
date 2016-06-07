@@ -3,32 +3,47 @@
   <head>
     <meta charset="utf-8">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="dest/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+    <script src="js-work/jquery.color.js"></script>
+    <script src="angular/route.js"></script>
+    <script src="angular/controllers.js"></script>
   </head>
-  <body>
+  <body ng-app="app">
     <header>
 
     </header>
-    <aside>
-      <ul class="menu">
-        <li><a href="">Добавить товар</a></li>
-        <li><a href="">Все товары</a></li>
-        <li><a href="">Добавить категорию</a></li>
-        <li><a href="">Все категории</a></li>
-        <li><a href="">Контакты</a></li>
-        <li><a href="">Доставка</a></li>
-        <li><a href="">Заказы</a></li>
-        <li><a href="">Управление</a></li>
-      </ul>
-    </aside>
-    <main>
-
-    </main>
+    <div class="wrapper">
+      <aside>
+        <ul class="menu">
+          <li class="dropdown"><a href="">Tовар</a>
+            <ul class="submenu">
+              <li><a href="#/add_things">Добавить товар</a></li>
+              <li><a href="#/things">Редактировать товар</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="">Категория</a>
+            <ul class="submenu">
+              <li><a href="#/add_category">Добавить категорию</a></li>
+              <li><a href="#/category">Редактировать категорию</a></li>
+            </ul>
+          </li>
+          <li><a href="#/contacts">Контакты</a></li>
+          <li><a href="#/delivery">Доставка</a></li>
+          <li><a href="#/basket">Заказы</a></li>
+          <li><a href="#/settings">Управление</a></li>
+        </ul>
+      </aside>
+      <main>
+        <ng-view></ng-view>
+      </main>
+    </div>
     <footer>
 
     </footer>
-    <script src="js/script.min.js"></script>
+    <script src="js-work/script.js"></script>
   </body>
 </html>

@@ -1,28 +1,73 @@
 $bcHeader: blue;
-$bcAside: green;
+$bcAside: #343d46;
 $bcMain: yellow;
 $bcFooter: grey;
 
+@font-face {
+    font-family: 'helveticaneuecyrlight';
+    src: url('../font/helveticaneuecyr-light-webfont.eot');
+    src: url('../font/helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/helveticaneuecyr-light-webfont.woff2') format('woff2'),
+         url('../font/helveticaneuecyr-light-webfont.woff') format('woff'),
+         url('../font/helveticaneuecyr-light-webfont.ttf') format('truetype'),
+         url('../font/helveticaneuecyr-light-webfont.svg#helveticaneuecyrlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+  font-family: "helveticaneuecyrlight", Tahoma;
+}
+
 header {
   width: 100%;
-  height: 100px;
+  height: 65px;
   background-color: $bcHeader;
 }
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
 aside {
-  width: 20%;
-  height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 250px;
   background-color: $bcAside;
   float: left;
 }
 .menu {
-  text-decoration: none;
   list-style: none;
+  margin-top: 50px;
+  position: relative;
+  cursor: pointer;
+  .submenu {
+    display: none;
+    position: absolute;
+    list-style: none;
+    left: 100%;
+    margin-top: -54px;
+    width: 250px;
+    background-color: $bcAside;
+  }
+  li {
+    height: 55px;
+    border-bottom: 1px solid #495663;
+  }
+  li:first-child {
+    border-top: 1px solid #495663;
+  }
+  a {
+      display: block;
+      text-decoration: none;
+      color: #7c90a3;
+      padding: 18px;
+  }
 }
 main {
-  width: 80%;
   height: 500px;
+  margin-left: 250px;;
   background-color: $bcMain;
-  float: right;
+  // float: right;
 }
 footer {
   clear: both;

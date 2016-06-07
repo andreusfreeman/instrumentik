@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     cssmin: {
       my_target: {
         files: {
-          'css/style.min.css': ['dest/style-concat.css']
+          'css/style.min.css': ['dest/*.css']
         }
       }
     },
