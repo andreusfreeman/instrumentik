@@ -18,6 +18,7 @@ header {
   overflow: hidden; }
 
 aside {
+  min-height: 750px;
   position: absolute;
   left: 0;
   top: 0;
@@ -37,7 +38,8 @@ aside {
     left: 100%;
     margin-top: -54px;
     width: 250px;
-    background-color: #343d46; }
+    background-color: #343d46;
+    z-index: 10; }
   .menu li {
     height: 55px;
     border-bottom: 1px solid #495663; }
@@ -50,9 +52,35 @@ aside {
     padding: 18px; }
 
 main {
-  height: 500px;
+  min-height: 750px;
   margin-left: 250px;
   background-color: yellow;
+  overflow: hidden; }
+
+.things__control {
+  width: 96%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 5px;
+  position: relative; }
+
+.things__control__sort {
+  width: 350px;
+  height: 70px;
+  border: 1px solid green;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.things__control__sort-select {
+  display: block;
+  width: 90%;
+  margin: 10px;
+  height: 30px; }
+
+.things__control__info {
+  height: 70px;
+  border: 1px solid green;
   overflow: hidden; }
 
 .things {
@@ -62,6 +90,65 @@ main {
   background-color: white;
   padding: 5px;
   box-shadow: 1px 1px 10px blue; }
+
+.things__table {
+  border: 1px solid red;
+  border-collapse: collapse; }
+  .things__table tr, .things__table td {
+    border: 1px solid red; }
+  .things__table thead {
+    text-align: center; }
+
+.things__table-title {
+  width: 50%;
+  padding: 5px; }
+  .things__table-title h6 {
+    color: blue; }
+
+.things__table-category {
+  width: 20%;
+  padding: 10px; }
+
+.things__table-cost {
+  width: 10%;
+  padding: 10px;
+  text-align: center; }
+
+.things__table-select {
+  width: 10%; }
+
+.add__things {
+  position: relative; }
+
+.add__things__form {
+  width: 95%;
+  margin: 0 auto;
+  background-color: white;
+  min-height: 700px;
+  margin-top: 10px;
+  padding: 5px;
+  box-shadow: 0 0 5px blue; }
+
+.add_things-title {
+  width: 200px;
+  height: 30px;
+  position: absolute;
+  top: 100px;
+  left: 0; }
+
+.add__things__menu {
+  display: block;
+  width: 95%;
+  list-style: none;
+  margin: 0 auto;
+  margin-top: 10px; }
+  .add__things__menu li {
+    display: inline-block;
+    padding: 10px;
+    background-color: #e9e9e9;
+    box-shadow: 1px 1px 5px blue; }
+  .add__things__menu a {
+    text-decoration: none; }
 
 footer {
   clear: both;

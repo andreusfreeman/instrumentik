@@ -1,19 +1,6 @@
-$bcHeader: blue;
-$bcAside: #343d46;
-$bcMain: yellow;
-$bcFooter: grey;
+@import 'variables';
+@import 'fonts';
 
-@font-face {
-    font-family: 'helveticaneuecyrlight';
-    src: url('../font/helveticaneuecyr-light-webfont.eot');
-    src: url('../font/helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/helveticaneuecyr-light-webfont.woff2') format('woff2'),
-         url('../font/helveticaneuecyr-light-webfont.woff') format('woff'),
-         url('../font/helveticaneuecyr-light-webfont.ttf') format('truetype'),
-         url('../font/helveticaneuecyr-light-webfont.svg#helveticaneuecyrlight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 body {
   font-family: "helveticaneuecyrlight", Tahoma;
 }
@@ -28,6 +15,7 @@ header {
   overflow: hidden;
 }
 aside {
+  min-height: 750px;
   position: absolute;
   left: 0;
   top: 0;
@@ -35,49 +23,16 @@ aside {
   background-color: $bcAside;
   float: left;
 }
-.menu {
-  list-style: none;
-  margin-top: 50px;
-  position: relative;
-  cursor: pointer;
-  .submenu {
-    display: none;
-    position: absolute;
-    list-style: none;
-    left: 100%;
-    margin-top: -54px;
-    width: 250px;
-    background-color: $bcAside;
-  }
-  li {
-    height: 55px;
-    border-bottom: 1px solid #495663;
-  }
-  li:first-child {
-    border-top: 1px solid #495663;
-  }
-  a {
-      display: block;
-      text-decoration: none;
-      color: #7c90a3;
-      padding: 18px;
-  }
-}
+@import 'menu';
 main {
-  height: 500px;
+  min-height: 750px;
   margin-left: 250px;;
   background-color: $bcMain;
   // float: right;
   overflow: hidden;
 }
-.things {
-  width: 95%;
-  margin: 0 auto;
-  margin-top: 10px;
-  background-color: white;
-  padding: 5px;
-  box-shadow: 1px 1px 10px blue;
-}
+@import 'all_things';
+@import 'add_things';
 footer {
   clear: both;
   width: 100%;

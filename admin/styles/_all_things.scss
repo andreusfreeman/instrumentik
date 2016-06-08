@@ -1,0 +1,66 @@
+.things__control {
+  width: 96%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 5px;
+  position: relative;
+}
+.things__control__sort {
+  width: 350px;
+  height: 70px;
+  border: 1px solid green;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.things__control__sort-select {
+  display: block;
+  width: 90%;
+  margin: 10px;
+  height: 30px;
+}
+.things__control__info {
+  height: 70px;
+  border: 1px solid green;
+  overflow: hidden;
+}
+.things {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 1px 1px 10px blue;
+}
+.things__table {
+  border: 1px solid red;
+  border-collapse: collapse;
+  tr, td {
+    border: 1px solid red;
+  }
+  thead {
+    text-align: center;
+  }
+}
+.things__table-image {
+}
+.things__table-title {
+  width: 50%;
+  padding: 5px;
+
+  h6 {
+    color: blue;
+  }
+}
+.things__table-category {
+  width: 20%;
+  padding: 10px;
+}
+.things__table-cost {
+  width: 10%;
+  padding: 10px;
+  text-align: center;
+}
+.things__table-select {
+  width: 10%;
+}

@@ -1,5 +1,55 @@
+<div class="things__control" ng-controller="listCategory">
+  <div class="things__control__sort">
+    <select name="" id="" class="things__control__sort-select">
+      <option ng-repeat="category in nameCategories|orderBy:'cat_title'" value="">{{category.cat_title}}</option>
+    </select>
+  </div>
+  <div class="things__control__info">
+  </div>
+</div>
 <div class="things">
-  <div ng-repeat="thing in things">
-    {{thing.title}}
-  </div>  
+  <table class="things__table" cellspacing="0">
+    <thead>
+      <tr>
+        <td>Картинка</td>
+        <td>Название</td>
+        <td>Категория</td>
+        <td>Стоимость</td>
+        <td>Действие</td>
+      </tr>
+    </thead>
+    <tr ng-repeat="thing in things" class="things__table-tr">
+      <td class="things__table-image">
+        <img src="" alt="{{thing.title}}" width="100px" height="100px">
+      </td>
+      <td class="things__table-title">
+        <h6>
+          {{thing.title}}
+        </h6>
+        <span class="things__table-title-update">
+          Обновлен: {{thing.edit_date}}
+        </span>
+        <span class="things__table-title-status">
+          Статус: Опубликован
+        </span>
+        <span class="things__table-title-mark">
+          Метка:
+        </span>
+        <div class="things__table-title-same">
+          Сопутствующие товары: шт
+        </div>
+      </td>
+      <td class="things__table-category">
+        <h6>
+          {{thing.category}}
+        </h6>
+      </td>
+      <td class="things__table-cost">
+        {{thing.cost}} {{thing.currency}}
+      </td>
+      <td class="things__table-select">
+
+      </td>
+    </tr>
+  </table>
 </div>

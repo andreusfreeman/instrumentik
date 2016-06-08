@@ -1,0 +1,29 @@
+.menu {
+  list-style: none;
+  margin-top: 50px;
+  position: relative;
+  cursor: pointer;
+  .submenu {
+    display: none;
+    position: absolute;
+    list-style: none;
+    left: 100%;
+    margin-top: -54px;
+    width: 250px;
+    background-color: $bcAside;
+    z-index: 10;
+  }
+  li {
+    height: 55px;
+    border-bottom: 1px solid #495663;
+  }
+  li:first-child {
+    border-top: 1px solid #495663;
+  }
+  a {
+      display: block;
+      text-decoration: none;
+      color: #7c90a3;
+      padding: 18px;
+  }
+}

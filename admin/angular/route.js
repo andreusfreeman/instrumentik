@@ -3,8 +3,6 @@ var app = angular.module('app', ['ngRoute']);
 app.config(function($routeProvider) {
   $routeProvider
   .when('/',{
-    templateUrl: 'index.html',
-    controller: 'indexCtrl'
   })
   .when('/things',{
     templateUrl: 'things.html',
@@ -47,7 +45,8 @@ app.config(function($routeProvider) {
     controller: 'basketCtrl'
   })
   .otherwise({
-
+    templateUrl: 'index.html',
+    controller: 'indexCtrl'
   })
   // $locationProvider.html5Mode(true);
 });
