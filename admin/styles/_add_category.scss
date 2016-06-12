@@ -1,4 +1,4 @@
-.add__things {
+.add__category {
   padding-bottom: 5px;
 
   input, select {
@@ -20,7 +20,7 @@
     color: #36526f;
   }
 }
-.add__things__form {
+.add__category__form {
   width: 95%;
   margin: 0 auto;
   background-color: rgba(230, 230, 230, 0.75);
@@ -33,22 +33,15 @@
     padding: 10px;
   }
 }
-.add__things__form-name-thing {
+.add__category__form-name-category {
   display: block;
   margin: 10px;
   color: red;
 }
-.add__things__common-text {
+.add__category__common-text {
   margin-top: 10px;
-}
-.add_things-title {
-  width: 200px;
-  height: 30px;
-  position: absolute;
-  top: 100px;
-  left: 0;
-}
-.add__things__menu {
+  }
+.add__category__menu {
   display: block;
   width: 95%;
   list-style: none;
@@ -65,23 +58,8 @@
     text-decoration: none;
   }
 }
-.add__things__common-form-title {
-  width: 60%;
-}
-.add__things__common-form-ea {
-  width: 5%;
-}
-.add__things__add-packages {
-  width: 40%;
-}
-.add__things__add-property,
-.add__things__add-value {
-  width: 30%;
-}
-.for_image {
-  width: 50px;
-}
-.add__things__meta-title,
-.add__things__meta-keywords {
+.add__category__common-name,
+.add__category__meta-title,
+.add__category__meta-keywords {
   width: 60%;
 }

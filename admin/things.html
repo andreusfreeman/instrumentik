@@ -1,7 +1,7 @@
-<div class="things__control" ng-controller="listCategory">
+<div class="things__control">
   <div class="things__control__sort">
     <select name="" id="" class="things__control__sort-select">
-      <option ng-repeat="category in nameCategories|orderBy:'cat_title'" value="">{{category.cat_title}}</option>
+      <option ng-repeat="category in categories|orderBy:'cat_title'" value="">{{category.cat_title}}</option>
     </select>
   </div>
   <div class="things__control__info">
@@ -52,4 +52,7 @@
       </td>
     </tr>
   </table>
+  <ul class="things-pages">
+    <li ng-repeat="page in quantityThings"><a href="">{{page}}</a></li>
+  </ul>
 </div>

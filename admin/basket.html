@@ -1,0 +1,84 @@
+<div class="order__block">
+  <ul class="order__block__menu">
+    <li><a href="order__block__order">Заказы</a></li>
+    <li><a href="order__block__callback">Обратный звонок</a></li>
+  </ul>
+  <div class="order__block__body">
+    <div class="order__block__order">
+      <table class="order__block__order__table" cellspacing="0">
+        <thead>
+          <tr>
+            <td>Статус</td>
+            <td>Дата</td>
+            <td>Имя + Телефон</td>
+            <td>Заказанный товар</td>
+            <td>Сумма заказа</td>
+            <td>Действие</td>
+          </tr>
+        </thead>
+        <tr ng-repeat="order in orders" class="order__block__order__table-tr">
+          <td class="order__block__order__table-status">
+            {{order.status}}
+            <br>
+            {{order.id}}
+          </td>
+          <td class="order__block__order__table-date">
+            {{order.date_order}}
+            <br>
+            {{order.time_order}}
+          </td>
+          <td class="order__block__order__table-name">
+            {{order.name}} {{order.surname}}
+            <br>
+            {{order.phone}}
+            <br>
+            {{order.email}}
+          </td>
+          <td class="order__block__order__table-things">
+
+          </td>
+          <td class="order__block__order__table-value">
+
+          </td>
+          <td class="order__block__order__table-setting">
+
+          </td>
+        </tr>
+      </table>
+      <ul class="order__block__order-pages">
+        <li ng-repeat="page in quantityPagesOrder"><a href="">{{page}}</a></li>
+      </ul>
+    </div>
+    <div class="order__block__callback">
+      <table class="order__block__callback__table" cellspacing="0">
+        <thead>
+          <tr>
+            <td>Статус</td>
+            <td>Дата</td>
+            <td>Имя</td>
+            <td>Номер телефона</td>
+          </tr>
+        </thead>
+        <tr ng-repeat="callback in callbacks" class="order__block__callback__table-tr">
+          <td class="order__block__callback__table-status">
+            {{callback.id}}
+          </td>
+          <td class="order__block__callback__table-date">
+            {{callback.date_callback}}
+            <br>
+            {{callback.time_callback}}
+          </td>
+          <td class="order__block__callback__table-name">
+            {{callback.name_callback}}
+          </td>
+          <td class="order__block__callback__table-phone">
+            {{callback.phone_callback}}
+          </td>
+        </tr>
+      </table>
+      <ul class="order__block__callback-pages">
+        <li ng-repeat="page in quantityPagesCallback"><a href="">{{page}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

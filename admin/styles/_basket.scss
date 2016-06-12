@@ -1,0 +1,152 @@
+.order__block {
+  padding-bottom: 5px;
+
+  label {
+    font-style: italic;
+    color: #36526f;
+  }
+}
+.order__block__body {
+  width: 95%;
+  margin: 0 auto;
+  background-color: rgba(230, 230, 230, 0.75);
+  min-height: 700px;
+  margin-top: 10px;
+  padding: 5px;
+  box-shadow: 0 0 5px blue;
+
+  h4 {
+    padding: 10px;
+  }
+}
+
+.order__block__menu {
+  display: block;
+  width: 95%;
+  list-style: none;
+  margin: 0 auto;
+  margin-top: 10px;
+
+  li {
+    display: inline-block;
+    padding: 10px;
+    background-color: #e9e9e9;
+    box-shadow: 1px 1px 5px blue;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.order__block__order__table {
+  border: 1px solid #88a3bd;
+  border-collapse: collapse;
+  width: 100%;
+  tr, td {
+    border: 1px solid #88a3bd;
+  }
+  thead {
+    text-align: center;
+    background-color: #fff;
+
+    td {
+      padding: 5px;
+    }
+  }
+}
+.order__block__order__table-status {
+  width: 10%;
+  padding: 5px;
+}
+.order__block__order__table-date {
+  width: 10%;
+  padding: 10px;
+}
+.order__block__order__table-name {
+  width: 15%;
+  padding: 10px;
+  text-align: center;
+}
+.order__block__order__table-things {
+  width: 30%;
+}
+.order__block__order__table-value {
+  width: 15%;
+}
+.order__block__order__table-setting {
+  width: 10%;
+}
+
+.order__block__callback__table {
+  border: 1px solid #88a3bd;
+  border-collapse: collapse;
+  width: 100%;
+  tr, td {
+    border: 1px solid #88a3bd;
+  }
+  thead {
+    text-align: center;
+    background-color: #fff;
+
+    td {
+      padding: 5px;
+    }
+  }
+}
+.order__block__callback__table-status {
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+
+  h6 {
+    color: blue;
+  }
+}
+.order__block__callback__table-date {
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+}
+.order__block__callback__table-name {
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+}
+.order__block__callback__table-phone {
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+}
+.order__block__callback-pages {
+  display: block;
+  width: 100%;
+  margin: 10px;
+
+  li {
+    display: inline-block;
+    padding: 10px;
+    background-color: #73728c;
+    margin-left: 5px;
+  }
+  a {
+    color: #cac8e5;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+.order__block__order-pages {
+  display: block;
+  width: 100%;
+  margin: 10px;
+
+  li {
+    display: inline-block;
+    padding: 10px;
+    background-color: #73728c;
+    margin-left: 5px;
+  }
+  a {
+    color: #cac8e5;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

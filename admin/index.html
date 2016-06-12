@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="dest/reset.css">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css?id=1">
+    <script src="tinymce/tinymce.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
-    <script src="tinymce/tinymce.min.js"></script>
+    <script src="angular/angular-ui-tinymce/tinymce.js"></script>
     <script src="js-work/jquery.color.js"></script>
     <script src="angular/route.js"></script>
     <script src="angular/controllers.js?123"></script>
@@ -34,7 +35,14 @@
           <li><a href="#/contacts">Контакты</a></li>
           <li><a href="#/delivery">Доставка</a></li>
           <li><a href="#/basket">Заказы</a></li>
-          <li><a href="#/settings">Управление</a></li>
+          <li class="dropdown"><a href="#/settings">Управление</a>
+            <ul class="submenu">
+              <li><a href="#/statistics">Статистика</a></li>
+              <li><a href="#/social_networks">Социальные сети</a></li>
+              <li><a href="#/edit_slider">Слайдер</a></li>
+              <li><a href="#/exchange_rates">Курс валют</a></li>
+            </ul>
+          </li>
         </ul>
       </aside>
       <main>

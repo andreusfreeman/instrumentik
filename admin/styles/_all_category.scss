@@ -1,11 +1,11 @@
-.things__control {
+.category__control {
   width: 96%;
   margin: 0 auto;
   overflow: hidden;
   margin-top: 5px;
   position: relative;
 }
-.things__control__sort {
+.category__control__sort {
   width: 350px;
   height: 70px;
   border: 1px solid green;
@@ -13,18 +13,18 @@
   top: 0;
   left: 0;
 }
-.things__control__sort-select {
+.category__control__sort-select {
   display: block;
   width: 90%;
   margin: 10px;
   height: 30px;
 }
-.things__control__info {
+.category__control__info {
   height: 70px;
   border: 1px solid green;
   overflow: hidden;
 }
-.things {
+.category {
   width: 95%;
   margin: 0 auto;
   margin-top: 10px;
@@ -32,9 +32,10 @@
   padding: 5px;
   box-shadow: 1px 1px 10px blue;
 }
-.things__table {
+.category__table {
   border: 1px solid #88a3bd;
   border-collapse: collapse;
+  width: 100%;
   tr, td {
     border: 1px solid #88a3bd;
   }
@@ -47,29 +48,27 @@
     }
   }
 }
-.things__table-image {
-}
-.things__table-title {
-  width: 50%;
+.category__table-title {
+  width: 55%;
   padding: 5px;
 
   h6 {
     color: blue;
   }
 }
-.things__table-category {
-  width: 20%;
+.category__table-amount {
+  width: 15%;
   padding: 10px;
 }
-.things__table-cost {
-  width: 10%;
+.category__table-status {
+  width: 15%;
   padding: 10px;
   text-align: center;
 }
-.things__table-select {
+.category__table-select {
   width: 10%;
 }
-.things-pages {
+.category-pages {
   display: block;
   width: 100%;
   margin: 10px;

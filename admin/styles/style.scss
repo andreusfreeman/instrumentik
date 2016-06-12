@@ -1,13 +1,16 @@
 @import 'variables';
 @import 'fonts';
+@import 'delivery';
 
 body {
   font-family: "helveticaneuecyrlight", Tahoma;
+  background: url(../img/bg.png) no-repeat;
+  background-size: cover;
 }
 
 header {
   width: 100%;
-  height: 65px;
+  height: 50px;
   background-color: $bcHeader;
 }
 .wrapper {
@@ -27,12 +30,16 @@ aside {
 main {
   min-height: 750px;
   margin-left: 250px;;
-  background-color: $bcMain;
+  // background-color: $bcMain;
   // float: right;
   overflow: hidden;
 }
 @import 'all_things';
 @import 'add_things';
+@import 'all_category';
+@import 'add_category';
+@import 'contacts';
+@import 'basket';
 footer {
   clear: both;
   width: 100%;

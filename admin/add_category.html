@@ -1,0 +1,48 @@
+<div class="add__category">
+  <ul class="add__category__menu">
+    <li><a href="add__category__common">Общие</a></li>
+    <li><a href="add__category__meta">Мета-теги</a></li>
+  </ul>
+  <div class="add__category__form">
+    <h4>Добавить категорию</h4>
+    <span class="add__category__form-name-category">
+      {{nameCategory}}
+    </span>
+    <div class="add__category__common">
+      <div>
+        <label>Название категории</label>
+        <input type="text" class="add__category__common-name" ng-model="nameCategory">
+      </div>
+      <div>
+        <label for="check-undercat" ng-model="underCat">Подкатегория</label>
+        <input id="check-undercat" type="checkbox" class="add__category__common-check" ng-checked="underCat">
+      </div>
+      <div>
+        <label>Категория для подкатегории</label>
+        <select class="add__category__common-under-category" ng-model="myCategory" ng-options="category.cat_title for category in categories">
+            <option value="">-- Выберите категорию --</option>
+        </select>
+      </div>
+      <div class="add__category__common-text">
+        <textarea class="textarea-block" ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
+      </div>
+      <div>
+        <button ng-click="test()">Сохранить</button>
+      </div>
+    </div>
+    <div class="add__category__meta">
+      <label>Мета_Заголовок</label>
+      <div>
+        <input type="text" class="add__category__meta-title" ng-model="metaTitleCategory">
+      </div>
+      <label>Мета_Ключевые слова</label>
+      <div>
+        <input type="text" class="add__category__meta-keywords" ng-model="metaKeywordsCategory">
+      </div>
+      <label>Мета_Описание</label>
+      <div>
+        <textarea wrap="soft | hard" class="add__category__meta-description" placeholder="Введиде короткое описание" ng-model="metaDescriptionCategory"></textarea>
+      </div>
+    </div>
+  </div>
+</div>

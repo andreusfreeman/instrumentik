@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'ui.tinymce']);
 
 app.config(function($routeProvider) {
   $routeProvider
@@ -22,7 +22,7 @@ app.config(function($routeProvider) {
   })
   .when('/add_category',{
     templateUrl: 'add_category.html',
-    controller: 'basketCtrl'
+    controller: 'addCategoryCtrl'
   })
   .when('/edit_category/:categoryID',{
     templateUrl: 'edit_category.html',

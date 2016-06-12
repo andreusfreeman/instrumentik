@@ -1,3 +1,40 @@
-<div ng-repeat="cat in categories">
-  {{cat.meta_title}}
+<div class="category__control">
+  <div class="category__control__sort">
+    <select name="" id="" class="category__control__sort-select">
+      <option ng-repeat="category in categories|orderBy:'cat_title'" value="">{{category.cat_title}}</option>
+    </select>
+  </div>
+  <div class="category__control__info">
+  </div>
+</div>
+<div class="category">
+  <table class="category__table" cellspacing="0">
+    <thead>
+      <tr>
+        <td>Название</td>
+        <td>Количество товаров</td>
+        <td>Статус</td>
+        <td>Действие</td>
+      </tr>
+    </thead>
+    <tr ng-repeat="category in categories" class="category__table-tr">
+      <td class="category__table-title">
+        <h6>
+          {{category.cat_title}}
+        </h6>
+      </td>
+      <td class="category__table-amount">
+
+      </td>
+      <td class="category__table-status">
+        {{category.public_cat}}
+      </td>
+      <td class="category__table-select">
+
+      </td>
+    </tr>
+  </table>
+  <ul class="category-pages">
+    <li ng-repeat="page in quantityCategory"><a href="">{{page}}</a></li>
+  </ul>
 </div>
