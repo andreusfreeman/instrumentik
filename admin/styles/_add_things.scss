@@ -85,3 +85,11 @@
 .add__things__meta-keywords {
   width: 60%;
 }
+.add__things__image-sortable {
+  list-style-type: none;
+
+  li {
+    float: left;
+    margin-left: 5px;
+  }
+}

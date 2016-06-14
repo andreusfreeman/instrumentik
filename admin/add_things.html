@@ -19,46 +19,46 @@
         </div>
         <div>
           <label>Стоимость товара</label>
-          <input type="number" class="add__things__common-form-cost">
-          <select class="add__things__common-form-currency">
+          <input type="number" class="add__things__common-form-cost" ng-model="costThing">
+          <select class="add__things__common-form-currency" ng-model="currencyThing">
             <option value="UAH">UAH</option>
-            <option value="USD">EUR</option>
-            <option value="EUR">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
           </select>
           <label>Единица измерения</label>
-          <input type="text" class="add__things__common-form-ea">
+          <input type="text" class="add__things__common-form-ea" ng-model="eaThing">
         </div>
         <div>
           <label class="all_label">
             В наличии
           </label>
-          <input type="radio" name="in_stock" value="1" checked>
+          <input type="radio" name="in_stock" value="В наличии" ng-model="onStock.status">
           <label class="all_label">
             Нет в наличии
           </label>
-          <input type="radio" name="in_stock" value="2">
+          <input type="radio" name="in_stock" value="Нет в наличии" ng-model="onStock.status">
           <label class="all_label">
             Под заказ
           </label>
-          <input type="radio" name="in_stock" value="3">
+          <input type="radio" name="in_stock" value="Под заказ" ng-model="onStock.status">
         </div>
         <div>
           <label class="all_label">
             Категория
           </label>
-          <select class="add__things__common-category" ng-model="myCategory" ng-options="category.cat_title for category in categories">
+          <select class="add__things__common-category" ng-model="myThing" ng-options="category.cat_title for category in categories">
               <option value="">-- Выберите категорию --</option>
           </select>
         </div>
         <div>
           <label>Срок поставки</label>
-          <input type="text" class="add__things__common-form-delivery-time">
+          <input type="text" class="add__things__common-form-delivery-time" ng-model="termDeliveryThing">
         </div>
         <div>
           <label>Производитель</label>
-          <input type="text" class="add__things__common-form-production">
+          <input type="text" class="add__things__common-form-production" ng-model="factoryThing">
           <label>Страна производста</label>
-          <input type="text" class="add__things__common-form-country-production">
+          <input type="text" class="add__things__common-form-country-production" ng-model="countryThing">
         </div>
         <div>
           <label class="all_label">
@@ -70,13 +70,13 @@
         </div>
       </div>
       <div>
-        <button>Сохранить</button>
+        <button ng-click="addThing()">Сохранить</button>
       </div>
     </div>
     <div class="add__things__add">
       <div class="add__things__add__dimensions">
         <h6>Способ упаковки</h6>
-        <input type="text" class="add__things__add-packages">
+        <input type="text" class="add__things__add-packages" ng-model="packageThing">
         <h6>Характеристики</h6>
         <input type="text" class="add__things__add-property">
         <input type="text" class="add__things__add-value">
@@ -87,8 +87,8 @@
     </div>
     <div class="add__things__image">
       <input type="file" id="file" multiple>
-      <input class="add__things__image-text" type="text" value="instrumentik.biz">
-      <button onclick="addText()">
+      <input class="add__things__image-text" type="text" value="instrumentik.biz" ng-model="imageText">
+      <button ng-click="addText()">
         Добавить текст
       </button>
       <div>
@@ -134,17 +134,17 @@
     <div class="add__things__meta">
       <label>Мета_Заголовок</label>
       <div>
-        <input type="text" class="add__things__meta-title">
+        <input type="text" class="add__things__meta-title" ng-model="metaTitleThing">
       </div>
       <label>Мета_Ключевые слова</label>
       <div>
-        <input type="text" class="add__things__meta-keywords">
+        <input type="text" class="add__things__meta-keywords" ng-model="metaKeywordsThing">
       </div>
       <label>Мета_Описание</label>
       <div>
-        <textarea wrap="soft | hard" class="add__things__meta-description" placeholder="Введиде короткое описание" ></textarea>
+        <textarea wrap="soft | hard" class="add__things__meta-description" placeholder="Введиде короткое описание" ng-model="metaDescriptionThing"></textarea>
       </div>
     </div>
   </div>
 </div>
-<script src="js-work/script-add.js?id=1"></script>
+<script src="js-work/script-add.js?id=6"></script>

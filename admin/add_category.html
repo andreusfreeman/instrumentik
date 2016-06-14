@@ -15,7 +15,7 @@
       </div>
       <div>
         <label for="check-undercat" ng-model="underCat">Подкатегория</label>
-        <input id="check-undercat" type="checkbox" class="add__category__common-check" ng-checked="underCat">
+        <input id="check-undercat" type="checkbox" class="add__category__common-check" ng-model="checkboxUndercat">
       </div>
       <div>
         <label>Категория для подкатегории</label>
@@ -27,7 +27,7 @@
         <textarea class="textarea-block" ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
       </div>
       <div>
-        <button ng-click="test()">Сохранить</button>
+        <button ng-click="addCategory()">Сохранить</button>
       </div>
     </div>
     <div class="add__category__meta">

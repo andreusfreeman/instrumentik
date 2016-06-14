@@ -220,6 +220,12 @@ main {
 .add__things__meta-keywords {
   width: 60%; }
 
+.add__things__image-sortable {
+  list-style-type: none; }
+  .add__things__image-sortable li {
+    float: left;
+    margin-left: 5px; }
+
 .category__control {
   width: 96%;
   margin: 0 auto;

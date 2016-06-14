@@ -14,7 +14,7 @@ app.config(function($routeProvider) {
   })
   .when('/edit_things/:thingID',{
     templateUrl: 'edit_things.html',
-    controller: 'editYhingstCtrl'
+    controller: 'editThingstCtrl'
   })
   .when('/category',{
     templateUrl: 'category.html',
@@ -26,7 +26,7 @@ app.config(function($routeProvider) {
   })
   .when('/edit_category/:categoryID',{
     templateUrl: 'edit_category.html',
-    controller: 'basketCtrl'
+    controller: 'editCategoryCtrl'
   })
   .when('/basket',{
     templateUrl: 'basket.html',
@@ -34,15 +34,15 @@ app.config(function($routeProvider) {
   })
   .when('/delivery',{
     templateUrl: 'delivery.html',
-    controller: 'basketCtrl'
+    controller: 'deliveryCtrl'
   })
   .when('/contacts',{
     templateUrl: 'contacts.html',
-    controller: 'basketCtrl'
+    controller: 'contactsCtrl'
   })
   .when('/settings',{
     templateUrl: 'settings.html',
-    controller: 'basketCtrl'
+    controller: 'settingCtrl'
   })
   .otherwise({
     templateUrl: 'index.html',
