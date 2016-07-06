@@ -140,13 +140,29 @@ app.controller('addThingsCtrl', function($scope, $http, listCategory, textOnImag
   });
   $scope.imageText = "instrumentik.biz";
 
+  $scope.addCondition = function(){
+    var test2 = document.querySelector(".add__things__add__own-condition-block");
+    var newEl = document.createElement("div");
+    newEl.className = "add__things__add__own-condition";
+    newEl.setAttribute("ng-model", "conditionThing");
+    test2.appendChild(newEl).innerHTML = "<input type='text' class='add__things__add-property' placeholder='Название'> <input type='text' class='add__things__add-value' placeholder='Значение+ед.измерения'><div><img onclick='deleteConditionPosition(this.parentNode);return false' src='http://instrumentik.biz/image/close_basket.png' width='25px' style='cursor:pointer' title='Удалить'></div>";
+ };
   $scope.currencyThing = "UAH";
+  console.log($scope.conditionThing);
 
   $scope.onStock = {
     status: "В наличии"
   }
+  $scope.downloadAddingThing = function(myCategoryItems){
+    console.log(myCategoryItems);
+    document.querySelector('.add__things__same-modal-back').style.display = 'block';
+    document.querySelector('.add__things__same-modal-window-items').innerHTML = myCategoryItems;
+  };
+  $scope.hideModal = function() {
+    $('.add__things__same-modal-back').fadeOut();
+  }
   $scope.addThing = function() {
-    alert($scope.currencyThing);
+    console.log($scope.conditionThing);
   }
     // if($scope.myCategory === 'undefined') {
     //   $scope.myCategory.id = 0;

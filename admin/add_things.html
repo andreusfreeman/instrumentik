@@ -78,10 +78,17 @@
         <h6>Способ упаковки</h6>
         <input type="text" class="add__things__add-packages" ng-model="packageThing">
         <h6>Характеристики</h6>
-        <input type="text" class="add__things__add-property">
-        <input type="text" class="add__things__add-value">
+        <div class="add__things__add__own-condition-block">
+          <div class="add__things__add__own-condition" ng-model="conditionThing">
+            <input type="text" class="add__things__add-property" placeholder="Название">
+            <input type="text" class="add__things__add-value" placeholder="Значение+ед.измерения">
+            <div>
+              <img onclick='deleteConditionPosition(this.parentNode);return false' src='http://instrumentik.biz/image/close_basket.png' width='25px' style='cursor:pointer' title='Удалить'/>
+            </div>
+          </div>
+        </div>
         <div>
-          <a href="" class="add__things__add-more">Добавить характеристику</a>
+          <button class="add__things__add-more" ng-click="addCondition()">Добавить характеристику</button>
         </div>
       </div>
     </div>
@@ -121,14 +128,23 @@
       </div>
     </div>
     <div class="add__things__same">
-      <label>Выберите категория для сопутствующих товаров:</label>
+      <label>Выберите категорию для сопутствующих товаров:</label>
       <div>
         <select class="add__things__same-category" ng-model="myCategory" ng-options="category.cat_title for category in categories">
             <option value="">-- Выберите категорию --</option>
         </select>
       </div>
       <div>
-        <a href="#" ng-click="downloadAddingThing(myCategory.id)">Загрузить</a>
+        <button ng-click="downloadAddingThing(myCategory.id)">Загрузить</button>
+      </div>
+      <div class="add__things__same-modal-back">
+        <div class="add__things__same-modal-window">
+          <div class="add__things__same-modal-window-category">
+            <div class="add__things__same-modal-window-items">
+            </div>
+            <img src='http://instrumentik.biz/image/close_basket.png' width='25px' style='cursor:pointer;' title='Удалить'ng-click="hideModal()">
+          </div>
+        </div>
       </div>
     </div>
     <div class="add__things__meta">
@@ -147,4 +163,4 @@
     </div>
   </div>
 </div>
-<script src="js-work/script-add.js?id=6"></script>
+<script src="js-work/script-add.js?id=9"></script>

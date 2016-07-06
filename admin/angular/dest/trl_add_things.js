@@ -1,4 +1,4 @@
-app.controller('addThingsCtrl', function($scope, $http, listCategory, translitWords){
+app.controller('addThingsCtrl', function($scope, $http, listCategory, translitWords, textOnImage){
   listCategory.category().success(function(response){
         $scope.categories = response;
   });
@@ -9,6 +9,17 @@ app.controller('addThingsCtrl', function($scope, $http, listCategory, translitWo
   // $scope.getContent = function() {
   //     console.log('Editor content:', $scope.tinymceModel);
   //   };
+
+  $scope.addCondition = function(){
+    var test2 = document.getElementById("add_own_condition");
+    var newEl = document.createElement("div");
+    newEl.className = "add_own_condition";
+    test2.appendChild(newEl).innerHTML = "<div style='float:left'><input type='text' id='more_condition' placeholder='Название'> <input type='text' id='more_condition' placeholder='Значение+ед.измерения'></div><div style='float:left;margin-top:10px'><a href='#' onclick='deleteConditionPosition(this.parentNode);return false'><img src='http://instrumentik.biz/image/close_basket.png' width='25px' style='cursor:pointer' title='Удалить'/></a></div>";
+ }
+  $scope.imageText = "instrumentik.biz";
+  $scope.addText = function() {
+    textOnImage.textOn($scope.imageText);
+  }
   $scope.addThing = function() {
     if($scope.myCategory === 'undefined') {
       $scope.myCategory.id = 0;

@@ -156,3 +156,7 @@ $('#file').on('change', function() {
       });
    });
 });
+
+function deleteConditionPosition(tempCondition){
+  tempCondition.parentNode.parentNode.removeChild(tempCondition.parentNode);
+};
