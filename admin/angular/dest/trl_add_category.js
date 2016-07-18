@@ -5,32 +5,25 @@ app.controller('addCategoryCtrl', function($scope, $http, listCategory, translit
     $scope.checkboxUndercat = true;
 
     $scope.addCategory = function() {
-      // var test = encodeURIComponent(JSON.stringify($scope.nameCategory));
-      // alert(test);
-      // test = decodeURIComponent(test);
-      // alert(test);
-      // test = encodeURIComponent(test);
-      // alert(test);
-      // test = decodeURIComponent(test);
-      // alert(test);
-      // alert(translitWords.urlRusLat($scope.nameCategory));
-      // if($scope.myCategory === 'undefined') {
-      //   $scope.myCategory.id = 0;
-      // };
-      // $http({
-      //     method: "post",
-      //     url: "http://instrumentik.biz/admin/query/add_category.php",
-      //     data: {
-      //         meta_title: 'test',
-      //         meta_keywords: 'test',
-      //         meta_description: 'test',
-      //         cat_title: 'test',
-      //         cat_description: 'test',
-      //         cat_eng: 'test',
-      //         under_cat: 'test'
-      //     },
-      //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-      // });
+      if ( $scope.nameCategory.length > 0 ) {
+        if($scope.myCategory === 'undefined') {
+          $scope.myCategory.id = 0;
+        };
+        $http({
+          method: "post",
+          url: "http://instrumentik.biz/admin/query/add_category.php",
+          headers: { 'Content-Type': 'application/json' },
+          data: {
+            meta_title: encodeURIComponent($scope.metaTitleCategory),
+            meta_keywords: encodeURIComponent($scope.metaKeywordsCategory),
+            meta_description: encodeURIComponent($scope.metaDescriptionCategory),
+            cat_title: encodeURIComponent($scope.nameCategory),
+            cat_description: encodeURIComponent($scope.tinymceOptions),
+            cat_eng: encodeURIComponent(translitWords.urlRusLat($scope.nameCategory)),
+            under_cat: encodeURIComponent($scope.myCategory)
+          }
+        });
+      }
     }
 
     $('.add__category__common').addClass('active');

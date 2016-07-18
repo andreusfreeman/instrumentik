@@ -68,6 +68,11 @@
 }
 .things__table-select {
   width: 10%;
+
+  img {
+    margin-top: 20px;
+    cursor: pointer;
+  }
 }
 .things-pages {
   display: block;

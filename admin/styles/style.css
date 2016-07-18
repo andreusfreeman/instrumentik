@@ -130,6 +130,9 @@ main {
 
 .things__table-select {
   width: 10%; }
+  .things__table-select img {
+    margin-top: 20px;
+    cursor: pointer; }
 
 .things-pages {
   display: block;

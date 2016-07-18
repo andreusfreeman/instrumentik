@@ -14,7 +14,7 @@ app.config(function($routeProvider) {
   })
   .when('/edit_things/:thingID',{
     templateUrl: 'edit_things.html',
-    controller: 'editThingstCtrl'
+    controller: 'editThingsCtrl'
   })
   .when('/category',{
     templateUrl: 'category.html',

@@ -1,0 +1,233 @@
+<div class="add__things">
+  <ul class="add__things__menu">
+    <li><a href="add__things__common">Общие</a></li>
+    <li><a href="add__things__add">Дополнительные</a></li>
+    <li><a href="add__things__image">Картинки</a></li>
+    <li><a href="add__things__same">Сопутствующие товары</a></li>
+    <li><a href="add__things__meta">Мета-теги</a></li>
+  </ul>
+  <div class="add__things__form">
+    <h4>Добавить товар</h4>
+    <span class="add__things__form-name-thing">
+      {{nameThing}}
+    </span>
+    <div class="add__things__common">
+      <div class="add__things__common-form">
+        <div>
+          <label>Название товара</label>
+          <input type="text" class="add__things__common-form-title" ng-model="nameThing">
+        </div>
+        <div>
+          <label>Стоимость товара</label>
+          <input type="number" class="add__things__common-form-cost" ng-model="costThing">
+          <select class="add__things__common-form-currency" ng-model="currencyThing">
+            <option value="UAH">UAH</option>
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+          </select>
+          <label>Единица измерения</label>
+          <input type="text" class="add__things__common-form-ea" ng-model="eaThing">
+        </div>
+        <div>
+          <label class="all_label">
+            В наличии
+          </label>
+          <input type="radio" name="in_stock" value="В наличии" ng-model="onStock.status">
+          <label class="all_label">
+            Нет в наличии
+          </label>
+          <input type="radio" name="in_stock" value="Нет в наличии" ng-model="onStock.status">
+          <label class="all_label">
+            Под заказ
+          </label>
+          <input type="radio" name="in_stock" value="Под заказ" ng-model="onStock.status">
+        </div>
+        <div>
+          <label class="all_label">
+            Категория
+          </label>
+          <select class="add__things__common-category" ng-model="myThing" ng-options="category.cat_title for category in categories">
+              <option value="">-- Выберите категорию --</option>
+          </select>
+        </div>
+        <div>
+          <label>Срок поставки</label>
+          <input type="text" class="add__things__common-form-delivery-time" ng-model="termDeliveryThing">
+        </div>
+        <div>
+          <label>Производитель</label>
+          <input type="text" class="add__things__common-form-production" ng-model="factoryThing">
+          <label>Страна производста</label>
+          <input type="text" class="add__things__common-form-country-production" ng-model="countryThing">
+        </div>
+        <div>
+          <label class="all_label">
+            Детальное описание товара или услуги
+          </label>
+          <div class="add__things__common-text">
+            <textarea class="textarea-block" ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button ng-click="editThing()">Сохранить</button>
+      </div>
+    </div>
+    <div class="add__things__add">
+      <div class="add__things__add__dimensions">
+        <h6>Способ упаковки</h6>
+        <input type="text" class="add__things__add-packages" ng-model="packageThing">
+        <h6>Характеристики</h6>
+        <div class="add__things__add__own-condition-block">
+          <div class="add__things__add__own-condition" ng-model="conditionThing">
+            <input type="text" class="add__things__add-property" placeholder="Название">
+            <input type="text" class="add__things__add-value" placeholder="Значение+ед.измерения">
+            <div>
+              <img onclick='deleteConditionPosition(this.parentNode);return false' src='http://instrumentik.biz/image/close_basket.png' width='25px' style='cursor:pointer' title='Удалить'/>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="add__things__add-more" ng-click="addCondition()">Добавить характеристику</button>
+        </div>
+      </div>
+    </div>
+    <div class="add__things__image">
+      <input type="file" id="file" multiple>
+      <input class="add__things__image-text" type="text" value="instrumentik.biz" ng-model="imageText">
+      <button ng-click="addText()">
+        Добавить текст
+      </button>
+      <div>
+        <input class="for_image" type="number" placeholder="Размер главной фото" value="400">
+        <label>
+          <span class="add__things__image-foto-resize">
+            Размер главного фото
+          </span>
+        </label>
+      </div>
+      <div>
+        <input class="for_image" type="number" placeholder="Размер фото для категории" value="200">
+        <label>
+          <span class="add__things__image-foto-resize">
+            Размер фото для категории
+          </span>
+        </label>
+      </div>
+      <div>
+        <input class="for_image" type="number" placeholder="Размер подглавной фото" value="100">
+        <label>
+          <span class="add__things__image-foto-resize">
+            Размер фото для выбора
+          </span>
+        </label>
+      </div>
+      <div class="add__things__image-download">
+  			<ul class="add__things__image-sortable">
+        </ul>
+      </div>
+    </div>
+    <div class="add__things__same">
+      <label>Выберите категорию для сопутствующих товаров:</label>
+      <div>
+        <select class="add__things__same-category" ng-model="myCategory" ng-options="category.cat_title for category in categories">
+            <option value="">-- Выберите категорию --</option>
+        </select>
+      </div>
+      <div>
+        <button ng-click="downloadAddingThing(myCategory.id)">Загрузить</button>
+      </div>
+      <div class="add__things__same-modal-back">
+        <div class="add__things__same-modal-window">
+          <div class="add__things__same-modal-window-category">
+            <table class="things__table" cellspacing="0">
+              <thead>
+                <tr>
+                  <td style="width: 95px;">Картинка</td>
+                  <td style="width: 379px;">Название</td>
+                  <td style="width: 147px;">Категория</td>
+                  <td style="width: 50px;">Стоимость</td>
+                  <td style="width: 68px;">Действие</td>
+                </tr>
+              </thead>
+            </table>
+            <div class="add__things__same-modal-window-items">
+              <table class="things__table" cellspacing="0">
+                <tr ng-repeat="thing in things" class="things__table-tr">
+                  <td style="display: none">
+                    {{thing.id}}
+                  </td>
+                  <td class="things__table-image">
+                    <img src="" alt="{{thing.title}}" width="100px" height="100px">
+                  </td>
+                  <td class="things__table-title">
+                    <h6>
+                      {{thing.title}}
+                    </h6>
+                    <span class="things__table-title-update">
+                      Обновлен: {{thing.edit_date}}
+                    </span>
+                    <span class="things__table-title-status">
+                      Статус: Опубликован
+                    </span>
+                    <span class="things__table-title-mark">
+                      Метка:
+                    </span>
+                    <div class="things__table-title-same">
+                      Сопутствующие товары: шт
+                    </div>
+                  </td>
+                  <td class="things__table-category">
+                    <h6>
+                      {{thing.category}}
+                    </h6>
+                  </td>
+                  <td class="things__table-cost">
+                    <span>
+                      {{thing.cost}} {{thing.currency}}
+                    </span>
+                  </td>
+                  <td class="things__table-select">
+                    <input type="checkbox">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <button ng-click="addSameThings()">Добавить</button><button ng-click="hideModal()">Закрыть</button>
+          </div>
+        </div>
+      </div>
+      <div class="add__things__same-list">
+        <table class="things__table" cellspacing="0">
+          <thead>
+            <tr>
+              <td>Картинка</td>
+              <td>Название</td>
+              <td>Категория</td>
+              <td>Стоимость</td>
+              <td>Действие</td>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="add__things__meta">
+      <label>Мета_Заголовок</label>
+      <div>
+        <input type="text" class="add__things__meta-title" ng-model="metaTitleThing">
+      </div>
+      <label>Мета_Ключевые слова</label>
+      <div>
+        <input type="text" class="add__things__meta-keywords" ng-model="metaKeywordsThing">
+      </div>
+      <label>Мета_Описание</label>
+      <div>
+        <textarea wrap="soft | hard" class="add__things__meta-description" placeholder="Введиде короткое описание" ng-model="metaDescriptionThing"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js-work/script-add.js?id=13"></script>
