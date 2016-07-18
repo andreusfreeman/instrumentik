@@ -42,6 +42,12 @@ main {
 footer {
   clear: both;
   width: 100%;
-  height: 50px;
+  height: 30px;
   background-color: $bcFooter;
+
+  span {
+    display: block;
+    color:white;
+    padding: 5px;
+  }
 }

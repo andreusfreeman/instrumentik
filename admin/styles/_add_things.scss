@@ -28,6 +28,7 @@
   margin-top: 10px;
   padding: 5px;
   box-shadow: 0 0 5px blue;
+  overflow: hidden;
 
   h4 {
     padding: 10px;
@@ -116,10 +117,47 @@
   left: 25%;
   top: 5%;
   width: 60%;
-  height: 200px;
+  height: 530px;
   background-color: #cccccc;
   z-index: 100;
+
+  thead {
+    text-align: center;
+  }
+
+  button {
+    margin-left: 10px;
+  }
+
+  .things__table-cost span {
+    display: block;
+    margin-top: 25px;
+  }
 }
 .add__things__same-modal-window-category {
   position: relative;
+}
+.add__things__same-modal-window-items {
+  overflow: auto;
+  height: 450px;
+  padding: 5px;
+
+  tr {
+    width: 100px;
+  }
+  input {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 15px;
+  }
+}
+.modal-close {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+}
+.add__things__same-list {
+  padding: 5px;
 }

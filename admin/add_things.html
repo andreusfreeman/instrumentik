@@ -140,11 +140,78 @@
       <div class="add__things__same-modal-back">
         <div class="add__things__same-modal-window">
           <div class="add__things__same-modal-window-category">
+            <table class="things__table" cellspacing="0">
+              <thead>
+                <tr>
+                  <td style="width: 95px;">Картинка</td>
+                  <td style="width: 379px;">Название</td>
+                  <td style="width: 147px;">Категория</td>
+                  <td style="width: 50px;">Стоимость</td>
+                  <td style="width: 68px;">Действие</td>
+                </tr>
+              </thead>
+            </table>
             <div class="add__things__same-modal-window-items">
+              <table class="things__table" cellspacing="0">
+                <tr ng-repeat="thing in things" class="things__table-tr">
+                  <td style="display: none">
+                    {{thing.id}}
+                  </td>
+                  <td class="things__table-image">
+                    <img src="" alt="{{thing.title}}" width="100px" height="100px">
+                  </td>
+                  <td class="things__table-title">
+                    <h6>
+                      {{thing.title}}
+                    </h6>
+                    <span class="things__table-title-update">
+                      Обновлен: {{thing.edit_date}}
+                    </span>
+                    <span class="things__table-title-status">
+                      Статус: Опубликован
+                    </span>
+                    <span class="things__table-title-mark">
+                      Метка:
+                    </span>
+                    <div class="things__table-title-same">
+                      Сопутствующие товары: шт
+                    </div>
+                  </td>
+                  <td class="things__table-category">
+                    <h6>
+                      {{thing.category}}
+                    </h6>
+                  </td>
+                  <td class="things__table-cost">
+                    <span>
+                      {{thing.cost}} {{thing.currency}}
+                    </span>
+                  </td>
+                  <td class="things__table-select">
+                    <input type="checkbox">
+                  </td>
+                </tr>
+              </table>
             </div>
-            <img src='http://instrumentik.biz/image/close_basket.png' width='25px' style='cursor:pointer;' title='Удалить'ng-click="hideModal()">
+            <button ng-click="addSameThings()">Добавить</button><button ng-click="hideModal()">Закрыть</button>
           </div>
         </div>
+      </div>
+      <div class="add__things__same-list">
+        <table class="things__table" cellspacing="0">
+          <thead>
+            <tr>
+              <td>Картинка</td>
+              <td>Название</td>
+              <td>Категория</td>
+              <td>Стоимость</td>
+              <td>Действие</td>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>  
       </div>
     </div>
     <div class="add__things__meta">
@@ -163,4 +230,4 @@
     </div>
   </div>
 </div>
-<script src="js-work/script-add.js?id=9"></script>
+<script src="js-work/script-add.js?id=13"></script>

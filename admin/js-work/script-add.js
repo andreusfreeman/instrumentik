@@ -149,7 +149,7 @@ $('#file').on('change', function() {
       resizeFile(file, 200).done(function(canvas1) {
         resizeFile(file, 100).done(function(canvas2) {
           $('.add__things__image-sortable').append(
-            $("<li/>").attr("style","position:relative").append($("<div/>").attr("style","position: absolute;top:5px;right:30px;").append("<img src='http://instrumentik.biz/image/close_basket.png' onclick='deleteImg(this)' width='25px' style='cursor:pointer' title='Удалить'>"),canvas, $("<ul/>").append($("<li/>").attr("style","display:none").append(canvas1, canvas2)))
+            $("<li/>").attr("style","position:relative").append($("<div/>").attr("style","position: absolute;top:5px;right:5px;").append("<img src='http://instrumentik.biz/image/close_basket.png' onclick='deleteImg(this)' width='25px' style='cursor:pointer' title='Удалить'>"),canvas1, $("<ul/>").append($("<li/>").attr("style","display:none").append(canvas, canvas2)))
             );
           });
         });
@@ -160,3 +160,6 @@ $('#file').on('change', function() {
 function deleteConditionPosition(tempCondition){
   tempCondition.parentNode.parentNode.removeChild(tempCondition.parentNode);
 };
+function deleteAdditionPosition(addBlock){
+   addBlock.parentNode.parentNode.removeChild(addBlock.parentNode);
+ }
