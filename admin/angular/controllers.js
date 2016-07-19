@@ -256,13 +256,25 @@ app.controller('editThingsCtrl', function($scope, $http, listCategory, textOnIma
   
   $scope.imageText = "instrumentik.biz";
 
-  $scope.addCondition = function(){
+  $scope.addCondition = function(conditionCount){
     var test2 = document.querySelector(".add__things__add__own-condition-block");
-    var newEl = document.createElement("div");
-    newEl.className = "add__things__add__own-condition";
-    newEl.setAttribute("ng-model", "conditionThing");
-    test2.appendChild(newEl).innerHTML = "<input type='text' class='add__things__add-property' placeholder='Название'> <input type='text' class='add__things__add-value' placeholder='Значение+ед.измерения'><div><img onclick='deleteConditionPosition(this.parentNode);return false' src='http://instrumentik.biz/image/close_basket.png' width='25px' style='cursor:pointer' title='Удалить'></div>";
- };
+    if ( conditionCount.length > 0 ) {
+        for ( var i = 0; i < conditionCount.length; i++ ){
+           var newEl = document.createElement("div");
+            newEl.className = "add__things__add__own-condition";
+            newEl.setAttribute("ng-model", "conditionThing");
+            test2.appendChild(newEl).innerHTML = "<input type='text' value='" + conditionCount[i][0] + "' class='add__things__add-property' placeholder='Название'> <input type='text' value='" + conditionCount[i][1] + "' class='add__things__add-value' placeholder='Значение+ед.измерения'><div><img onclick='deleteConditionPosition(this.parentNode);return false' src='http://instrumentik.biz/image/close_basket.png' width='25px' style='cursor:pointer' title='Удалить'></div>";
+         }
+    } else {
+         var newEl = document.createElement("div");
+            newEl.className = "add__things__add__own-condition";
+            newEl.setAttribute("ng-model", "conditionThing");
+            test2.appendChild(newEl).innerHTML = "<input type='text' class='add__things__add-property' placeholder='Название'> <input type='text' class='add__things__add-value' placeholder='Значение+ед.измерения'><div><img onclick='deleteConditionPosition(this.parentNode);return false' src='http://instrumentik.biz/image/close_basket.png' width='25px' style='cursor:pointer' title='Удалить'></div>";
+        }
+    };
+ 
+  $scope.addCondition($scope.editThings.own_condition);
+  
   $scope.currencyThing = "UAH";
   console.log($scope.conditionThing);
 
