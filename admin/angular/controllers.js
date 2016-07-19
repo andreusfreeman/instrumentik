@@ -248,6 +248,12 @@ app.controller('editThingsCtrl', function($scope, $http, listCategory, textOnIma
   listCategory.category().success(function(response){
         $scope.categories = response;
   });
+  
+  $http.get('http://127.0.0.1:8080/query/things.js?' + Math.random(100000000))
+    .success(function(resultThing){
+      $scope.editThings = resultThing;
+  })
+  
   $scope.imageText = "instrumentik.biz";
 
   $scope.addCondition = function(){
