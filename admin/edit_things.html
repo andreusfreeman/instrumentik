@@ -15,18 +15,18 @@
       <div class="add__things__common-form">
         <div>
           <label>Название товара</label>
-          <input type="text" class="add__things__common-form-title" ng-model="nameThing">
+          <input type="text" class="add__things__common-form-title" ng-model="nameThing" value="editThings.title">
         </div>
         <div>
           <label>Стоимость товара</label>
-          <input type="number" class="add__things__common-form-cost" ng-model="costThing">
-          <select class="add__things__common-form-currency" ng-model="currencyThing">
+          <input type="number" class="add__things__common-form-cost" ng-model="costThing" value="editThings.cost">
+          <select class="add__things__common-form-currency" ng-model="currencyThing" value="editThings.currency">
             <option value="UAH">UAH</option>
             <option value="EUR">EUR</option>
             <option value="USD">USD</option>
           </select>
           <label>Единица измерения</label>
-          <input type="text" class="add__things__common-form-ea" ng-model="eaThing">
+          <input type="text" class="add__things__common-form-ea" ng-model="eaThing" value="editThings.ea">
         </div>
         <div>
           <label class="all_label">
@@ -52,13 +52,13 @@
         </div>
         <div>
           <label>Срок поставки</label>
-          <input type="text" class="add__things__common-form-delivery-time" ng-model="termDeliveryThing">
+          <input type="text" class="add__things__common-form-delivery-time" ng-model="termDeliveryThing" value="editThings.delivery_term">
         </div>
         <div>
           <label>Производитель</label>
-          <input type="text" class="add__things__common-form-production" ng-model="factoryThing">
+          <input type="text" class="add__things__common-form-production" ng-model="factoryThing" value="editThings.prod">
           <label>Страна производста</label>
-          <input type="text" class="add__things__common-form-country-production" ng-model="countryThing">
+          <input type="text" class="add__things__common-form-country-production" ng-model="countryThing" value="editThings.country_prod">
         </div>
         <div>
           <label class="all_label">
@@ -76,7 +76,7 @@
     <div class="add__things__add">
       <div class="add__things__add__dimensions">
         <h6>Способ упаковки</h6>
-        <input type="text" class="add__things__add-packages" ng-model="packageThing">
+        <input type="text" class="add__things__add-packages" ng-model="packageThing" value="editThings.packaging_method">
         <h6>Характеристики</h6>
         <div class="add__things__add__own-condition-block">
           <div class="add__things__add__own-condition" ng-model="conditionThing">
@@ -123,7 +123,10 @@
         </label>
       </div>
       <div class="add__things__image-download">
-  			<ul class="add__things__image-sortable">
+  			<ul class="add__things__image-sortable" ng-repeat="imageThing in arrayNameImage">
+  			  <li><img src="{{imageThing[1]}}"></li>
+  			  <li style="display: none"><img src="{{imageThing[0]}}"></li>
+  			  <li style="display: none"><img src="{{imageThing[2]}}"></li>
         </ul>
       </div>
     </div>
@@ -209,7 +212,26 @@
             </tr>
           </thead>
           <tbody>
-
+            <!-- <tr ng-repeat="sameThing in add_block_id">
+              <td style='display:none'>
+                arrayThings[x].id
+              </td>
+              <td>
+                arrayThings[x].id
+              </td>
+              <td>
+                arrayThings[x].title
+              </td>
+              <td>
+                arrayThings[x].category
+              </td>
+              <td>
+                arrayThings[x].cost + arrayThings[x].currency
+              </td>
+              <td>
+                <img onclick='deleteAdditionPosition(this.parentNode);return false' src='http://instrumentik.biz/image/close_basket.png' width='25px' style='cursor:pointer;' title='Удалить'>
+              </td>
+            </tr> -->
           </tbody>
         </table>
       </div>
@@ -217,15 +239,15 @@
     <div class="add__things__meta">
       <label>Мета_Заголовок</label>
       <div>
-        <input type="text" class="add__things__meta-title" ng-model="metaTitleThing">
+        <input type="text" class="add__things__meta-title" ng-model="metaTitleThing" value="editThings.meta_title">
       </div>
       <label>Мета_Ключевые слова</label>
       <div>
-        <input type="text" class="add__things__meta-keywords" ng-model="metaKeywordsThing">
+        <input type="text" class="add__things__meta-keywords" ng-model="metaKeywordsThing" value="editThings.meta_keywords">
       </div>
       <label>Мета_Описание</label>
       <div>
-        <textarea wrap="soft | hard" class="add__things__meta-description" placeholder="Введиде короткое описание" ng-model="metaDescriptionThing"></textarea>
+        <textarea wrap="soft | hard" class="add__things__meta-description" placeholder="Введиде короткое описание" ng-model="metaDescriptionThing">{{editThings.meta_description}}</textarea>
       </div>
     </div>
   </div>
